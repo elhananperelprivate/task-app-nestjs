@@ -5,11 +5,13 @@ import { TaskModule } from './task/task.module';
 import { IoAdapter } from '@nestjs/platform-socket.io';
 import { SocketModule } from './socket/socket.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { TaskService } from './task/task.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [  
-      MongooseModule.forRoot('mongodb+srv://eliperel20:L4ebUmuPQqSAqrRc@cluster0.rupsaoq.mongodb.net/taskdb?retryWrites=true&w=majority'),
+    imports: [  
+      ConfigModule.forRoot(),
+        MongooseModule.forRoot(process.env.MONGODB_URI ||
+            'mongodb+srv://eliperel20:L4ebUmuPQqSAqrRc@cluster0.rupsaoq.mongodb.net/taskdb?retryWrites=true&w=majority'),
       TaskModule, 
       SocketModule,
       IoAdapter
