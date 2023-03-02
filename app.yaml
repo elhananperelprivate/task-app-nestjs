@@ -1,5 +1,5 @@
 runtime: nodejs14
-service: task-app-nestjs
+service: default
 
 env_variables:
   NODE_ENV: production
