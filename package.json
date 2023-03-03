@@ -5,8 +5,10 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "main": "dist/main.js",
   "scripts": {
-    "build": "nest build",
+    "build": "tsc -p tsconfig.build.json",
+    "gcp-build": "npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
