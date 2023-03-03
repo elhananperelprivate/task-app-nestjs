@@ -15,7 +15,7 @@
     "build": "tsc -p tsconfig.build.json",
     "deploy": "gcloud app deploy",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "start": "node ./dist/main.js",
+    "start": "node dist/main.js",
     "test": "jest",
     "gcp-build": "npm run build"
   },
