@@ -7,8 +7,12 @@
   "license": "UNLICENSED",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "build": "tsc -p",
     "gcp-build": "npm run build",
+    "compile": "tsc -p .",
+    "clean": "gts clean",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
