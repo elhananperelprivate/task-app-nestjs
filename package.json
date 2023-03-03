@@ -5,17 +5,19 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "main": "dist/main.js",
   "scripts": {
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
-    "test": "jest",
-    "start": "node ./index.js",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "build": "tsc -p tsconfig.build.json",
     "deploy": "gcloud app deploy",
-    "clean": "gts clean",
-    "compile": "tsc -p .",
-    "fix": "gts fix",
-    "build": "tsc -p ."
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "start": "node ./dist/main.js",
+    "test": "jest",
+    "gcp-build": "npm run build"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
