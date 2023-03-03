@@ -1,0 +1,8 @@
+steps:
+- name: 'node:14'
+  entrypoint: 'bash'
+  args: ['-c', 'npm install -g typescript']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'compile']
