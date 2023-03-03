@@ -1,11 +1,17 @@
+env: standard
 runtime: nodejs14
-service: default
-
+instance_class: F4
+service: team
+inbound_services:
+- warmup
+automatic_scaling:
+    min_idle_instances: 1
+    min_instances: 1
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
 env_variables:
   NODE_ENV: production
   MONGODB_URI: mongodb+srv://eliperel20:L4ebUmuPQqSAqrRc@cluster0.rupsaoq.mongodb.net/taskdb?retryWrites=true&w=majority
 
-handlers:
-  - url: /.*
-    script: auto
-    secure: always

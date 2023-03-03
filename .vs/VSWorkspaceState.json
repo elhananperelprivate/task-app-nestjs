@@ -5,6 +5,6 @@
     "\\src\\socket",
     "\\src\\task"
   ],
-  "SelectedNode": "\\src\\socket\\socket.service.ts",
+  "SelectedNode": "\\src\\app.controller.ts",
   "PreviewInSolutionExplorer": false
 }
