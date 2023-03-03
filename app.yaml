@@ -1,9 +1,6 @@
 env: standard
 runtime: nodejs18
-instance_class: F4
-service: team
-inbound_services:
-- warmup
+service: default
 automatic_scaling:
     min_idle_instances: 1
     min_instances: 1
